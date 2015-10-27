@@ -1,9 +1,11 @@
 <h1>Index of tasks</h1>
-<%= link_to "Add a task", new_task_path %>
+<h3><%= link_to "Add a task", new_task_path %></h3>
+  <hr>
 <% @tasks.each do |task| %>
-  <h2> <%= link_to task.content, task_path(task)%></h2>
-  <p> <%= task.done%></p>
-  <p> <%= task.priority %></p>
+  <p>Content : <%= task.content%></p>
+  <p> done : <%= task.done%></p>
+  <p> Priority : <%= task.priority %></p>
+  <hr>
   <%= link_to "Edit", edit_task_path(task) %>
   <%= link_to "Delete", task_path(task), method: :delete %>
   <hr>
